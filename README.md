@@ -1,21 +1,78 @@
 # BTL-Cuoi-Ki-Pong
 1. Hướng dẫn cài đặt:
 
-a. Cách lấy chương trình:
+Nếu đọc hướng dẫn và chưa hiểu thì có thể tham khảo vid sau về cách cài SFML về máy: https://www.youtube.com/watch?v=G5-8Tcz6WaU
 
-Cài SFML: Xem vid để hiểu rõ hơn cách làm: https://www.youtube.com/watch?v=G5-8Tcz6WaU&t=1616s
+Bước 1: Cài Code::Blocks:
 
-Bước 1: Cài cmake (do Compiler của Code::Blocks không tương thích với các file sẵn có của SFML, vì vậy cần cài cmake và download source code của SFML để tự build file).
+• Truy cập và làm theo hướng dẫn đường link này để tải và cài đặt Code::Blocks (nếu chưa có Code::Blocks): https://quantrimang.com/cach-tai-va-cai-dat-code-block-tren-windows-10-179163
 
-Bước 2: Chạy cmake để tạo file SFML, sau đó add các file dll vào folder bin/Debug và bin/Release.
+Bước 2: Cài Cmake:
 
-Bước 3: Link các đường dẫn vào Code::Blocks, sau đó tạo project và bắt đầu code.
+• Nếu đã có Code::Blocks trên máy thì việc tiếp theo cần làm là cài Cmake. Vì SFML yêu cầu compiler của IDE và bản builds phải giống nhau 100% mới chạy được, mà 
 
-b. Cách chạy chương trình:
+Code::Blocks phiên bản mới nhất (20.03) sử dụng compiler version 8.1.0, 32/64 bit trong khi các bản pre-built của SFML không có bản nào tương thích với version 8.1.0. 
 
-Sau khi cài SFML, clone repo về máy. Sau đó trích lại đường dẫn folder include trong folder Source code SFML mà mình tải 
-trước đó, và trích đường dẫn folder lib trong folder SFML mà mình tự build trước đó. Sau đó chỉ cần F9 là được (nếu trong trường hợp F9 báo lỗi “Undefined reference to 
-'SDL_main'” thì chỉ cần thêm “int argc, char* argv[]” vào trong int main() rồi F9 lại là được.
+Vì vậy cần Cmake để tự build file SFML mới có thể tương thích với Code::Blocks.
+
+• Truy cập đường link sau: https://cmake.org/download/
+
+• Tìm xuống phần Latest Release, kéo xuống phần Binary distributions và tìm thư mục phù hợp với máy tính (như máy tính 32 bits hay 64 bits, sử dụng Windows, Mac hay 
+
+Linux).
+• Sau khi tải và cài đặt xong Cmake, vào phần thanh Search ở Taskbar trên màn hình, tìm Cmake gui.
+
+• Mở Cmake gui.
+
+Bước 3: Cài SFML:
+
+• Truy cập đường link sau: https://www.sfml-dev.org/download/sfml/2.5.1/
+
+• Kéo xuống dưới đến khi gặp dòng Source code và ấn download.
+
+• Giải nén folder và cho vào vị trí bạn muốn.
+
+• Sau khi có Cmake và folder Source code tải thành công, tạo 1 folder mới (để tên là gì cũng được, tuy vậy gợi ý để tên là SFML_Builds) và đây sẽ là folder tự build 
+
+SFML.
+
+• Trong Cmake, có 2 dòng trên đầu màn hình là Where is the source code (trích đường dẫn folder source code vừa tải từ SFML) và Where to build the binaries (trích đường 
+
+dẫn folder SFML_Builds vừa tạo).
+
+• Sau khi trích dẫn xong, ở phía dưới màn hình có 2 nút Configure và Generate. Ấn configure và khi Cmake hỏi sử dụng complier nào thì chọn CodeBlocks – MinGW 
+
+Makefiles. Sau đó ấn finish và đợi để configure.
+
+• Sau khi Cmake configure xong trên màn hình sẽ hiện 1 danh sách màu đỏ, tìm dòng SFML_BUILD_EXAMPLE và tích vào đó, và sau đó ấn configure, sau khi Cmake báo 
+
+configuring done thì ấn generate và đợi máy báo generating done.
+
+• Sau đó mở folder SFML_Builds và sẽ thấy có 1 file SFML.cbp. Mở file này bằng Code::Blocks và ở phần thanh công cụ có 1 nút hình bánh răng cưa (nút Build). Ấn vào đó 
+
+và đợi cho đến khi nào Code::Blocks báo build thành công, sau đó thoát khỏi Code::Blocks.
+
+• Vào Cmake, ở phần CMAKE_BUILD_TYPE xóa chữ Release và type debug (in thường hoặc hoa đều được). Sau đó ấn configure và generate như bước trên. Sau đó lại mở lại file 
+
+SFML.cbp vừa nãy và tiếp tục ấn nút Build và đợi máy báo build thành công rồi lại thoát khỏi Code::Blocks.
+ 
+• Vào Cmake, ở phần BUILD_SHARED_LIBS bỏ dấu tích. Sau đó ấn configure và generate như bước trên. Sau đó lại mở lại file SFML.cbp vừa nãy và tiếp tục ấn nút Build và 
+
+đợi máy báo build thành công rồi lại thoát khỏi Code::Blocks.
+
+• Vào Cmake, ở phần CMAKE_BUILD_TYPE xóa chữ debug và type release. Sau đó ấn configure và generate như bước trên. Sau đó lại mở lại file SFML.cbp vừa nãy và tiếp tục 
+
+ấn nút Build và đợi máy báo build thành công rồi lại thoát khỏi Code::Blocks.
+
+• Sau đó, tắt Cmake và clone repo về máy, sau đó mở file cbp lên. Chuột phải vào file project ở bên tay trái và chọn Build Options. Ở góc trên cùng tay trái ấn vào tên 
+
+folder và vào mục Search directories:
+
+- Ở phần compiler, link đường dẫn đến folder include của folder Source code SFML tải phía trên.
+
+- Ở phần linker, link đường dẫn đến folder lib của folder SFML Builds phía trên.
+
+• Sau đó thoát ra và chạy chương trình là được. Nếu trong trường hợp F9 báo lỗi “Undefined reference to 'SDL_main'” thì chỉ cần thêm “int argc, char* argv[]” vào trong int main() rồi F9 lại là được.
 
 2. Mô tả trò chơi:
 
