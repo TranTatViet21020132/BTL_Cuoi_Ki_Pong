@@ -715,3 +715,50 @@
 	<cmath>
 	"game.h"
 
+1653248170 source:d:\programs\c++\sfml\btl_cuoi_ki_pong\game.cpp
+	"game.h"
+
+1653286707 d:\programs\c++\sfml\btl_cuoi_ki_pong\game.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<cmath>
+
+1653248111 source:d:\programs\c++\sfml\btl_cuoi_ki_pong\main.cpp
+	"game.h"
+	"run.h"
+	"handle_event.h"
+	"render.h"
+	"game_reset.h"
+	"update.h"
+
+1653248119 d:\programs\c++\sfml\btl_cuoi_ki_pong\run.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<cmath>
+	"game.h"
+
+1653286707 d:\programs\c++\sfml\btl_cuoi_ki_pong\handle_event.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<cmath>
+	"game.h"
+
+1653289399 d:\programs\c++\sfml\btl_cuoi_ki_pong\render.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<cmath>
+	"game.h"
+
+1652683224 d:\programs\c++\sfml\btl_cuoi_ki_pong\game_reset.h
+
+1653248121 d:\programs\c++\sfml\btl_cuoi_ki_pong\update.h
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<iostream>
+	<cmath>
+	"game.h"
+
